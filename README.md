@@ -72,7 +72,7 @@
 
 * **App Version:** `7.99.0.1007655401`
 * **Patch Bundles:** `Akash-Sriram/morphe-google-photos`
-* **Patches Version:** `1.17.11`
+* **Patches Version:** `1.18.0`
 
 * **Applied Patches (6):**
   * `AMOLED dark theme`
@@ -438,7 +438,7 @@
 
 * **App Version:** `2026.42.0`
 * **Patch Bundles:** `MorpheApp/morphe-patches, jkennethcarino/adobo`
-* **Patches Version:** `2.2.0, 2.0.0-dev.4`
+* **Patches Version:** `2.3.0, 2.0.0-dev.4`
 
 * **Applied Patches (37):**
   * `App icon`
@@ -636,14 +636,15 @@
 
 * **App Version:** `21.45.82`
 * **Patch Bundles:** `MorpheApp/morphe-patches`
-* **Patches Version:** `2.2.0`
+* **Patches Version:** `2.3.0`
 
-* **Applied Patches (113):**
+* **Applied Patches (117):**
   * `AI channel filter`
   * `Add to queue`
   * `Ambient mode`
   * `App refresh rate`
   * `Ask flyout menu`
+  * `Autoplay control`
   * `Bypass image region restrictions`
   * `Bypass link redirects`
   * `Captions`
@@ -686,6 +687,7 @@
   * `Force animations`
   * `Force fullscreen landscape`
   * `Force original audio`
+  * `Fullscreen playlist panel`
   * `Fullscreen video scale`
   * `GmsCore support`
   * `Hide Shorts components`
@@ -702,6 +704,7 @@
   * `Hide status bar`
   * `Hide timestamp`
   * `Hide video action buttons`
+  * `Loop count`
   * `Loop video`
   * `Media notification controls`
   * `Miniplayer`
@@ -721,6 +724,7 @@
   * `Playback in feeds`
   * `Playback speed`
   * `Player icon style`
+  * `Playlist button`
   * `Playlist improvements`
   * `PoToken provider`
   * `Reload video`
@@ -762,11 +766,12 @@
 
 [![Download](https://img.shields.io/badge/Download-blue?style=for-the-badge&logo=github)](https://github.com/xASAHIx/Patchify/releases?q=youtube-music)
 
-* **App Version:** `9.45.51`
+* **App Version:** `9.46.51`
 * **Patch Bundles:** `MorpheApp/morphe-patches`
-* **Patches Version:** `2.2.0`
+* **Patches Version:** `2.3.0`
 
-* **Applied Patches (50):**
+* **Applied Patches (56):**
+  * `A-B loop`
   * `Android Auto`
   * `App refresh rate`
   * `Change header`
@@ -778,6 +783,8 @@
   * `Custom font`
   * `Disable DRC audio`
   * `Disable QUIC protocol`
+  * `Disable audio ducking`
+  * `Disable auto captions`
   * `Disable dislike redirection`
   * `Downloads`
   * `Enable audio/video switch`
@@ -797,6 +804,8 @@
   * `Media notification controls`
   * `Miniplayer previous and next buttons`
   * `Navigation bar`
+  * `Open system share sheet`
+  * `Pause when muted`
   * `Play albums songs`
   * `Playback speed`
   * `Playlist tags`
@@ -804,6 +813,7 @@
   * `PoToken provider`
   * `Remember repeat state`
   * `Remember shuffle state`
+  * `Remember video quality`
   * `Remove background playback restrictions`
   * `Remove viewer discretion dialog`
   * `Return YouTube Dislike`

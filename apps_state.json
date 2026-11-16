@@ -281,7 +281,7 @@
         "bundles": [
             {
                 "repo": "MorpheApp/morphe-patches",
-                "version": "2.2.0"
+                "version": "2.3.0"
             }
         ],
         "applied": [
@@ -290,6 +290,7 @@
             "Ambient mode",
             "App refresh rate",
             "Ask flyout menu",
+            "Autoplay control",
             "Bypass image region restrictions",
             "Bypass link redirects",
             "Captions",
@@ -324,7 +325,6 @@
             "Double tap to seek",
             "Download post images",
             "Downloads",
-            "Enable debugging",
             "Exit fullscreen mode",
             "Feed card layout",
             "Feed video actions",
@@ -332,6 +332,7 @@
             "Force animations",
             "Force fullscreen landscape",
             "Force original audio",
+            "Fullscreen playlist panel",
             "Fullscreen video scale",
             "GmsCore support",
             "Hide Shorts components",
@@ -348,6 +349,7 @@
             "Hide status bar",
             "Hide timestamp",
             "Hide video action buttons",
+            "Loop count",
             "Loop video",
             "Media notification controls",
             "Miniplayer",
@@ -365,6 +367,7 @@
             "Playback buffer",
             "Playback in feeds",
             "Playback speed",
+            "Playlist button",
             "Playlist improvements",
             "PoToken provider",
             "Reload video",
@@ -397,21 +400,23 @@
             "Wide search bar",
             "Shorts icon style",
             "Player icon style",
-            "Navigation bar"
+            "Navigation bar",
+            "Enable debugging"
         ],
         "excluded": [
             "Disable Play Store updates"
         ]
     },
     "YouTube-Music": {
-        "version": "9.45.51",
+        "version": "9.46.51",
         "bundles": [
             {
                 "repo": "MorpheApp/morphe-patches",
-                "version": "2.2.0"
+                "version": "2.3.0"
             }
         ],
         "applied": [
+            "A-B loop",
             "Android Auto",
             "App refresh rate",
             "Change header",
@@ -423,6 +428,8 @@
             "Custom font",
             "Disable DRC audio",
             "Disable QUIC protocol",
+            "Disable audio ducking",
+            "Disable auto captions",
             "Disable dislike redirection",
             "Downloads",
             "Enable audio/video switch",
@@ -442,6 +449,8 @@
             "Media notification controls",
             "Miniplayer previous and next buttons",
             "Navigation bar",
+            "Open system share sheet",
+            "Pause when muted",
             "Play albums songs",
             "Playback speed",
             "Playlist tags",
@@ -449,6 +458,7 @@
             "PoToken provider",
             "Remember repeat state",
             "Remember shuffle state",
+            "Remember video quality",
             "Remove background playback restrictions",
             "Remove viewer discretion dialog",
             "Return YouTube Dislike",
@@ -472,7 +482,7 @@
         "bundles": [
             {
                 "repo": "MorpheApp/morphe-patches",
-                "version": "2.2.0"
+                "version": "2.3.0"
             },
             {
                 "repo": "jkennethcarino/adobo",
@@ -781,7 +791,7 @@
         "bundles": [
             {
                 "repo": "Akash-Sriram/morphe-google-photos",
-                "version": "1.17.11"
+                "version": "1.18.0"
             }
         ],
         "applied": [
