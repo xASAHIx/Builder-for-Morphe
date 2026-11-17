@@ -437,8 +437,8 @@
 [![Download](https://img.shields.io/badge/Download-blue?style=for-the-badge&logo=github)](https://github.com/xASAHIx/Patchify/releases?q=reddit)
 
 * **App Version:** `2026.42.0`
-* **Patch Bundles:** `MorpheApp/morphe-patches, jkennethcarino/adobo`
-* **Patches Version:** `2.3.0, 2.0.0-dev.4`
+* **Patch Bundles:** `jkennethcarino/adobo, MorpheApp/morphe-patches`
+* **Patches Version:** `2.0.0-dev.5, 2.3.0`
 
 * **Applied Patches (37):**
   * `App icon`
@@ -493,7 +493,7 @@
 
 * **App Version:** `12.19.1-release.0`
 * **Patch Bundles:** `crimera/piko`
-* **Patches Version:** `3.11.1`
+* **Patches Version:** `3.12.0-dev.3`
 
 * **Applied Patches (73):**
   * `Add ability to copy media link`
