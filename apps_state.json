@@ -482,7 +482,7 @@
         "bundles": [
             {
                 "repo": "jkennethcarino/adobo",
-                "version": "2.0.0-dev.5"
+                "version": "2.0.0-dev.6"
             },
             {
                 "repo": "MorpheApp/morphe-patches",
@@ -662,7 +662,9 @@
             "Hide closeup buttons",
             "Filter feed",
             "Keep Home feed",
-            "Show posted date"
+            "Show posted date",
+            "Hide Assistant",
+            "Hide Inbox updates"
         ],
         "excluded": []
     },
@@ -988,7 +990,18 @@
             "Search comments",
             "Split the notes row",
             "Swipe through a chat's photos and posts",
-            "Watch again in the feed"
+            "Watch again in the feed",
+            "Ask for VP9 instead of AV1",
+            "Auto scroll in Home",
+            "Control the reel above comments",
+            "Don't send feed view history",
+            "Keep online history",
+            "Keep story viewers",
+            "Search blocked accounts",
+            "Sent follow requests",
+            "Shorter Active now",
+            "Sort reels on profiles",
+            "Three-dot menu items"
         ],
         "excluded": []
     }

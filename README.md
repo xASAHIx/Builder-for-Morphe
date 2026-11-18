@@ -183,7 +183,7 @@
 * **Patch Bundles:** `SysAdminDoc/HushGram`
 * **Patches Version:** `0.0.9`
 
-* **Applied Patches (176):**
+* **Applied Patches (187):**
   * `Accent color`
   * `Allow screenshots`
   * `Ambient light`
@@ -192,6 +192,8 @@
   * `Ask before a follow`
   * `Ask before a like`
   * `Ask before a refresh`
+  * `Ask for VP9 instead of AV1`
+  * `Auto scroll in Home`
   * `Back leaves Home`
   * `Blur the bars around Reels`
   * `Call blocker`
@@ -202,6 +204,7 @@
   * `Clean up Reels`
   * `Clear the media cache`
   * `Control taps and volume on Reels`
+  * `Control the reel above comments`
   * `Copy comment`
   * `Data saver`
   * `Default playback quality`
@@ -209,6 +212,7 @@
   * `Don't report Blend visits`
   * `Don't report screenshots`
   * `Don't save recent searches`
+  * `Don't send feed view history`
   * `Don't send reel watch history`
   * `Double tap to skip on Reels`
   * `Download any reel`
@@ -277,10 +281,12 @@
   * `Keep Reels auto scroll on`
   * `Keep a seek bar on Reels`
   * `Keep in chat`
+  * `Keep online history`
   * `Keep photo locations from Instagram`
   * `Keep playing in the background`
   * `Keep stories playing while zooming`
   * `Keep story buttons below the story`
+  * `Keep story viewers`
   * `Keep the Reels top bar`
   * `Keep the reel speed`
   * `Keep the tab bar on a reel's profile`
@@ -312,10 +318,13 @@
   * `Save in the post menu`
   * `Save profile picture`
   * `Saved on your profile`
+  * `Search blocked accounts`
   * `Search comments`
   * `See who a story mentions`
   * `Seek bar on feed videos`
   * `Seek bar on stories`
+  * `Sent follow requests`
+  * `Shorter Active now`
   * `Show a post's exact time`
   * `Show a reel's exact time`
   * `Show a story's exact time`
@@ -327,6 +336,7 @@
   * `Skip the collections tray`
   * `Skip the contacts and location popups`
   * `Smooth story opening`
+  * `Sort reels on profiles`
   * `Speed button on stories`
   * `Split the notes row`
   * `Spoof location`
@@ -352,6 +362,7 @@
   * `Tap a feed video to pause it`
   * `Tap to play`
   * `Thicker story progress bar`
+  * `Three-dot menu items`
   * `Turn off HDR brightness boosts`
   * `Turn off double tap to like`
   * `Upload stories at full quality`
@@ -371,7 +382,7 @@
 * **Patch Bundles:** `browzomje/browzomje-patches, MorpheApp/morphe-patches`
 * **Patches Version:** `1.10.0, 1.43.0`
 
-* **Applied Patches (57):**
+* **Applied Patches (59):**
   * `AMOLED black`
   * `Copy direct link`
   * `Disable AppsFlyer tracking`
@@ -391,7 +402,9 @@
   * `Filter pin menu`
   * `Fix push notifications`
   * `Hide AI-labeled pins`
+  * `Hide Assistant`
   * `Hide Create nav button`
+  * `Hide Inbox updates`
   * `Hide Notifications nav button`
   * `Hide Search nav button`
   * `Hide ad views`
@@ -438,7 +451,7 @@
 
 * **App Version:** `2026.42.0`
 * **Patch Bundles:** `jkennethcarino/adobo, MorpheApp/morphe-patches`
-* **Patches Version:** `2.0.0-dev.5, 2.3.0`
+* **Patches Version:** `2.0.0-dev.6, 2.3.0`
 
 * **Applied Patches (37):**
   * `App icon`
