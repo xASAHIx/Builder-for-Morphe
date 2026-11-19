@@ -4,7 +4,7 @@
         "bundles": [
             {
                 "repo": "crimera/piko",
-                "version": "3.12.0-dev.3"
+                "version": "3.12.0-dev.4"
             }
         ],
         "applied": [
@@ -39,6 +39,7 @@
             "Enable Undo Posts",
             "Enable debug menu for posts",
             "Enable force HD videos",
+            "Fix 20 photos support",
             "Force enable translate",
             "Handle custom twitter links",
             "Hide Banner",
@@ -79,6 +80,7 @@
             "Show poll results",
             "Show post source label",
             "Show sensitive media",
+            "Spoof client version",
             "Support external downloader",
             "Disable Play Store updates"
         ],
@@ -168,7 +170,8 @@
             "Disable disappearing messages swipe",
             "Hide like buttons",
             "Resume Reels after scrolling",
-            "Disable Play Store updates"
+            "Disable Play Store updates",
+            "Send keyboard GIFs"
         ],
         "excluded": [
             "Change version code"

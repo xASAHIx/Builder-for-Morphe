@@ -92,7 +92,7 @@
 * **Patch Bundles:** `crimera/piko`
 * **Patches Version:** `3.9.0-dev.9`
 
-* **Applied Patches (76):**
+* **Applied Patches (77):**
   * `Add settings`
   * `Allow user network certificate`
   * `Change like animation`
@@ -159,6 +159,7 @@
   * `Save Instants`
   * `Save deleted messages`
   * `Save media comment`
+  * `Send keyboard GIFs`
   * `Stories audio autoplay`
   * `Theme`
   * `Unlock Plus benefits`
@@ -506,9 +507,9 @@
 
 * **App Version:** `12.19.1-release.0`
 * **Patch Bundles:** `crimera/piko`
-* **Patches Version:** `3.12.0-dev.3`
+* **Patches Version:** `3.12.0-dev.4`
 
-* **Applied Patches (73):**
+* **Applied Patches (75):**
   * `Add ability to copy media link`
   * `Block redirecting to X Lite`
   * `Block update screen`
@@ -541,6 +542,7 @@
   * `Enable Undo Posts`
   * `Enable debug menu for posts`
   * `Enable force HD videos`
+  * `Fix 20 photos support`
   * `Force enable translate`
   * `Handle custom twitter links`
   * `Hide Banner`
@@ -581,6 +583,7 @@
   * `Show poll results`
   * `Show post source label`
   * `Show sensitive media`
+  * `Spoof client version`
   * `Support external downloader`
 </details>
 
