@@ -182,7 +182,7 @@
         "bundles": [
             {
                 "repo": "anddea/revanced-patches",
-                "version": "4.4.0-dev.7"
+                "version": "4.4.0-dev.8"
             }
         ],
         "applied": [
@@ -265,6 +265,7 @@
             "Theme",
             "Toolbar components",
             "Translate live chat",
+            "Ungroup notifications",
             "Unlock queue",
             "Video playback",
             "Voice Over Translation",
@@ -484,12 +485,12 @@
         "version": "2026.42.0",
         "bundles": [
             {
-                "repo": "jkennethcarino/adobo",
-                "version": "2.0.0-dev.6"
-            },
-            {
                 "repo": "MorpheApp/morphe-patches",
                 "version": "2.3.0"
+            },
+            {
+                "repo": "jkennethcarino/adobo",
+                "version": "2.0.0-dev.6"
             }
         ],
         "applied": [
@@ -543,7 +544,7 @@
         "bundles": [
             {
                 "repo": "anddea/revanced-patches",
-                "version": "4.4.0-dev.7"
+                "version": "4.4.0-dev.8"
             }
         ],
         "applied": [

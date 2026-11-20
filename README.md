@@ -451,8 +451,8 @@
 [![Download](https://img.shields.io/badge/Download-blue?style=for-the-badge&logo=github)](https://github.com/xASAHIx/Patchify/releases?q=reddit)
 
 * **App Version:** `2026.42.0`
-* **Patch Bundles:** `jkennethcarino/adobo, MorpheApp/morphe-patches`
-* **Patches Version:** `2.0.0-dev.6, 2.3.0`
+* **Patch Bundles:** `MorpheApp/morphe-patches, jkennethcarino/adobo`
+* **Patches Version:** `2.3.0, 2.0.0-dev.6`
 
 * **Applied Patches (37):**
   * `App icon`
@@ -855,7 +855,7 @@
 
 * **App Version:** `9.40.51`
 * **Patch Bundles:** `anddea/revanced-patches`
-* **Patches Version:** `4.4.0-dev.7`
+* **Patches Version:** `4.4.0-dev.8`
 
 * **Applied Patches (43):**
   * `App refresh rate`
@@ -914,9 +914,9 @@
 
 * **App Version:** `21.39.525`
 * **Patch Bundles:** `anddea/revanced-patches`
-* **Patches Version:** `4.4.0-dev.7`
+* **Patches Version:** `4.4.0-dev.8`
 
-* **Applied Patches (87):**
+* **Applied Patches (88):**
   * `Ambient mode control`
   * `App refresh rate`
   * `Bypass URL redirects`
@@ -999,6 +999,7 @@
   * `Theme`
   * `Toolbar components`
   * `Translate live chat`
+  * `Ungroup notifications`
   * `Unlock queue`
   * `Video playback`
   * `Visual preferences icons for YouTube`
