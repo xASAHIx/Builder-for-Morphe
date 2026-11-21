@@ -30,7 +30,7 @@ jobs:
           UPSTREAM_URL: ${{ vars.UPSTREAM_URL }}
         run: |
           if [ -z "$UPSTREAM_URL" ]; then
-            UPSTREAM_URL=$(gh api repos/${{ github.repository }} -q '.parent.html_url // "https://github.com/nvbangg/builder-for-morphe"')
+            UPSTREAM_URL=$(gh api repos/${{ github.repository }} -q '.parent.html_url // "https://github.com/krvstek/uni-apks"')
           fi
           git remote add upstream "$UPSTREAM_URL"
           git fetch --no-tags upstream refs/heads/main:refs/remotes/upstream/main
