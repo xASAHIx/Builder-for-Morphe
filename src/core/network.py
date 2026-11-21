@@ -16,7 +16,7 @@ import random
 import threading
 import time
 from pathlib import Path
-from typing import Any, cast
+from typing import Self
 from urllib.parse import urlparse
 
 from curl_cffi import requests
@@ -25,9 +25,9 @@ from curl_cffi.requests import exceptions as req_exc
 
 from src.core.logger import epr
 
-_RETRY_DELAYS = (2, 4)
-_MAX_ATTEMPTS = len(_RETRY_DELAYS) + 1
-_SOLVER_URL = os.getenv("CF_SOLVER_URL", "http://localhost:8000")
+_RETRY_DELAYS: tuple[int, ...] = (2, 4)
+_MAX_ATTEMPTS: int = len(_RETRY_DELAYS) + 1
+_SOLVER_URL: str = os.getenv("CF_SOLVER_URL", "http://localhost:8000")
 
 
 class NetworkError(Exception):
@@ -67,7 +67,7 @@ def _handle_status(resp: Response, url: str, attempt: int) -> bool:
 
 class NetworkManager:
     def __init__(self) -> None:
-        self.session = requests.Session(impersonate="chrome150")
+        self.session = requests.Session(impersonate="chrome152")
         token = os.getenv("GITHUB_TOKEN")
         self._gh_headers: dict[str, str] = {"Authorization": f"token {token}"} if token else {}
         self._domain_locks: dict[str, threading.Lock] = {}
@@ -77,7 +77,7 @@ class NetworkManager:
 
     def _reset_session(self) -> None:
         self.session.close()
-        self.session = requests.Session(impersonate="chrome150")
+        self.session = requests.Session(impersonate="chrome152")
 
     @property
     def gh_headers(self) -> dict[str, str]:
@@ -90,22 +90,24 @@ class NetworkManager:
             if resp.status_code != 200:
                 return False
 
-            resp_any: Any = resp
-            data = cast(dict[str, Any], resp_any.json())
+            data = resp.json()
+            if not isinstance(data, dict):
+                return False
+
             cookies = data.get("cookies", {})
             user_agent = data.get("user_agent")
             if isinstance(cookies, dict):
-                for k, v in cast(dict[str, str], cookies).items():
+                for k, v in cookies.items():
                     self.session.cookies.set(k, v)
             elif isinstance(cookies, list):
-                for c in cast(list[dict[str, str]], cookies):
+                for c in cookies:
                     if "name" in c and "value" in c:
                         self.session.cookies.set(c["name"], c["value"])
 
             if user_agent:
                 self.session.headers["User-Agent"] = user_agent
             return True
-        except (req_exc.RequestException, Exception) as exc:
+        except Exception as exc:
             epr(f"Challenge solver error for {url}: {exc}")
             return False
 
@@ -165,8 +167,7 @@ class NetworkManager:
                         continue
 
                     with tmp.open("wb") as fh:
-                        resp_any: Any = resp
-                        for chunk in cast(list[bytes], resp_any.iter_content(chunk_size=1048576)):
+                        for chunk in resp.iter_content(chunk_size=1048576):
                             fh.write(chunk)
                     tmp.replace(dest)
                     return
@@ -177,7 +178,7 @@ class NetworkManager:
                     _retry_sleep(attempt)
             raise NetworkError(f"Download failed after {_MAX_ATTEMPTS} attempts: {url}") from last_exc
 
-    def __enter__(self) -> "NetworkManager":
+    def __enter__(self) -> Self:
         return self
 
     def __exit__(self, *_: object) -> None:

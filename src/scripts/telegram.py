@@ -12,9 +12,9 @@
 # See the AUTHORS file in the root directory for details.
 # ---------------------------------------------------------
 
+import argparse
 import os
 import re
-import sys
 from pathlib import Path
 
 from curl_cffi import requests as curl_requests
@@ -39,7 +39,7 @@ def _parse_final_md(final_md: Path) -> tuple[list[str], str, list[str]]:
         elif not microg_line and stripped.startswith("▶️"):
             microg_line = stripped
         elif stripped.startswith("[🔗"):
-            if m := re.search(r"\[(.*?)\]\((.*?)\)", stripped):
+            if m := re.search(r"\[(.*?)]\((.*?)\)", stripped):
                 link_text, url = m.group(1), m.group(2)
                 org = url.split("/")[3] if url.count("/") >= 3 else ""
                 changelog_lines.append(f"[{link_text} ({org})]({url})" if org else stripped)
@@ -57,7 +57,7 @@ def _build_message(brand: str, green_lines: list[str], microg_line: str, changel
         parts.extend(changelog_lines)
     return "\n".join(parts)
 
-def notify(brand: str, final_md_path: str = "final.md") -> None:
+def notify(brand: str, final_md_path: Path | str = "final.md") -> None:
     token = os.getenv("TG_TOKEN")
     chat = os.getenv("TG_CHAT")
     if not token or not chat:
@@ -65,7 +65,7 @@ def notify(brand: str, final_md_path: str = "final.md") -> None:
         return
 
     path = Path(final_md_path)
-    if not path.exists() or not path.stat().st_size:
+    if not path.is_file() or path.stat().st_size == 0:
         epr(f"'{final_md_path}' not found or empty, skipping notification")
         return
 
@@ -85,15 +85,32 @@ def notify(brand: str, final_md_path: str = "final.md") -> None:
         else:
             pr("Telegram notification sent successfully")
 
+def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        prog="python -m src.scripts.telegram",
+        description="Send a build summary notification to Telegram.",
+    )
+    parser.add_argument(
+        "--brand",
+        required=True,
+        help="Brand / patch source name for the notification header",
+    )
+    parser.add_argument(
+        "--final-md",
+        default="final.md",
+        help="Path to the combined markdown release notes file (default: final.md)",
+    )
+    args = parser.parse_args(argv)
+    if not args.brand.strip():
+        parser.error("--brand cannot be empty")
+    if not args.final_md.strip():
+        parser.error("--final-md cannot be empty")
+    return args
+
 def main() -> None:
+    args = _parse_args()
     _require_ci("telegram.py")
-    match sys.argv[1:]:
-        case ["notify", brand]:
-            notify(brand)
-        case ["notify", brand, final_md]:
-            notify(brand, final_md)
-        case _:
-            abort("Usage: telegram.py notify <brand> [final_md_path]")
+    notify(args.brand, args.final_md)
 
 if __name__ == "__main__":
     main()

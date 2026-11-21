@@ -24,14 +24,17 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
 
       - name: Install uv
-        uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884  # v10.3.0
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2  # v10.3.3
         with:
-          python-version: "3.13"
+          python-version: "3.14"
           enable-cache: true
           quiet: true
 
       - name: Install dependencies
         run: uv sync --frozen
+
+      - name: Start API Solver in background
+        run: docker run -d -p 8000:8000 ghcr.io/sarperavci/cloudflarebypassforscraping:latest
 
       - name: Get build matrix
         id: get-matrix
@@ -39,9 +42,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ "${{ inputs.force_build }}" = "true" ]; then
-            echo "build_matrix=$(uv run python -m src.scripts.matrix get-matrix-force)" >> "$GITHUB_OUTPUT"
+            echo "build_matrix=$(uv run python -m src.scripts.matrix --force)" >> "$GITHUB_OUTPUT"
           else
-            echo "build_matrix=$(uv run python -m src.scripts.matrix get-matrix)" >> "$GITHUB_OUTPUT"
+            echo "build_matrix=$(uv run python -m src.scripts.matrix)" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Notify skipped build
@@ -56,13 +59,19 @@ jobs:
 
   build:
     needs: check-versions
-    if: needs.check-versions.outputs.build_matrix != '[]' && needs.check-versions.outputs.build_matrix != ''
-    strategy:
-      fail-fast: false
-      matrix:
-        patch_source: ${{ fromJSON(needs.check-versions.outputs.build_matrix) }}
+    if: contains(fromJSON(needs.check-versions.outputs.build_matrix), 'morphe')
     uses: ./.github/workflows/build.yml
     with:
-      patch_source: ${{ matrix.patch_source }}
+      patch_source: 'morphe'
+      filter_changelog: ${{ inputs.force_build != true }}
+    secrets: inherit
+
+  build-piko:
+    name: build (Piko)
+    needs: check-versions
+    if: contains(fromJSON(needs.check-versions.outputs.build_matrix), 'piko')
+    uses: ./.github/workflows/build.yml
+    with:
+      patch_source: 'piko'
       filter_changelog: ${{ inputs.force_build != true }}
     secrets: inherit
