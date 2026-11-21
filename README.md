@@ -450,11 +450,11 @@
 
 [![Download](https://img.shields.io/badge/Download-blue?style=for-the-badge&logo=github)](https://github.com/xASAHIx/Patchify/releases?q=reddit)
 
-* **App Version:** `2026.42.0`
+* **App Version:** `2026.47.0`
 * **Patch Bundles:** `MorpheApp/morphe-patches, jkennethcarino/adobo`
-* **Patches Version:** `2.3.0, 2.0.0-dev.6`
+* **Patches Version:** `2.4.0-dev.7, 2.0.0-dev.9`
 
-* **Applied Patches (37):**
+* **Applied Patches (48):**
   * `App icon`
   * `Colorize comment indent lines`
   * `Copy text`
@@ -466,32 +466,43 @@
   * `Disable post detail swipe`
   * `Disable screenshot popup`
   * `Download location`
+  * `Feed auto-scroll`
   * `Feed media max height`
+  * `Flair filters`
   * `Force system font`
   * `Full width feed media`
   * `Hide Ask button`
   * `Hide Trending shelves`
+  * `Hide Videos for you shelf`
   * `Hide ads`
   * `Hide communities shelf`
   * `Hide community menu badge`
+  * `Hide home tabs`
+  * `Hide interactive posts`
   * `Hide media viewer components`
   * `Hide navigation buttons`
+  * `Hide post buttons`
   * `Hide related posts`
   * `Hide sidebar components`
   * `High quality avatars`
   * `Keep feed position`
+  * `Keyword filters`
   * `Media viewer black background`
   * `Media viewer fade`
   * `Open links directly`
   * `Open links externally`
+  * `Open system share sheet`
+  * `Post side panel`
   * `Redgifs audio`
   * `Remember collapsed comments`
   * `Remove ads and telemetry`
   * `Remove subreddit dialog`
   * `Sanitize sharing links`
+  * `Share post content`
   * `Show flairs in home feed`
   * `Spoof signature`
   * `Start as guest`
+  * `Tablet grid feed`
 
 * **Excluded Patches (4):**
   * `Disable screenshot banner`
