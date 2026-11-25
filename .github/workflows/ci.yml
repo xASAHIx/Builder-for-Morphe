@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
 
       - name: Install uv
-        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2  # v10.3.3
+        uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d  # v10.4.0
         with:
           python-version: "3.14"
           enable-cache: true
@@ -58,20 +58,15 @@ jobs:
           gh run list -L400 --repo "$GITHUB_REPOSITORY" --json databaseId -q '.[].databaseId' | tail -n+91 | xargs -IID gh api "repos/$GITHUB_REPOSITORY/actions/runs/ID" -X DELETE || true
 
   build:
+    name: build
     needs: check-versions
-    if: contains(fromJSON(needs.check-versions.outputs.build_matrix), 'morphe')
+    if: needs.check-versions.outputs.build_matrix != '[]' && needs.check-versions.outputs.build_matrix != ''
+    strategy:
+      fail-fast: false
+      matrix:
+        brand: ${{ fromJSON(needs.check-versions.outputs.build_matrix) }}
     uses: ./.github/workflows/build.yml
     with:
-      patch_source: 'morphe'
-      filter_changelog: ${{ inputs.force_build != true }}
-    secrets: inherit
-
-  build-piko:
-    name: build (Piko)
-    needs: check-versions
-    if: contains(fromJSON(needs.check-versions.outputs.build_matrix), 'piko')
-    uses: ./.github/workflows/build.yml
-    with:
-      patch_source: 'piko'
+      patch_source: ${{ matrix.brand }}
       filter_changelog: ${{ inputs.force_build != true }}
     secrets: inherit
