@@ -3,20 +3,10 @@ on:
   workflow_dispatch:
     inputs:
       patch_source:
-        description: 'Select patch source'
+        description: 'Brand name (folder in configs/)'
         required: true
         default: 'morphe'
-        type: choice
-        options:
-          - morphe
-          - morphe-dev
-          - piko
-          - rushi
-          - hoo-dles
-          - hooman
-          - paresh
-          - de-vanced
-          - tiktok
+        type: string
   workflow_call:
     inputs:
       patch_source:
@@ -46,7 +36,7 @@ jobs:
           submodules: true
 
       - name: Install uv
-        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2  # v10.3.3
+        uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d  # v10.4.0
         with:
           python-version: "3.14"
           enable-cache: true
@@ -95,13 +85,13 @@ jobs:
           submodules: true
 
       - name: Install java
-        uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78  # v6.2.0
+        uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880  # v6.3.0
         with:
           distribution: "temurin"
           java-version: "21"
 
       - name: Install uv
-        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2  # v10.3.3
+        uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d  # v10.4.0
         with:
           python-version: "3.14"
           enable-cache: true
@@ -119,7 +109,7 @@ jobs:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
           KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
           KEYSTORE_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
-        run: uv run main.py --target "${{ matrix.id }}" ${{ matrix.arch && format('--arch {0}', matrix.arch) || '' }}
+        run: uv run main.py --brand "${{ inputs.patch_source }}" --target "${{ matrix.id }}" ${{ matrix.arch && format('--arch {0}', matrix.arch) || '' }}
 
       - name: Upload APKs to draft release
         if: always()
@@ -161,7 +151,7 @@ jobs:
           submodules: true
 
       - name: Install uv
-        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2  # v10.3.3
+        uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d  # v10.4.0
         with:
           python-version: "3.14"
           enable-cache: true
